@@ -13,8 +13,8 @@ projects = [
     },
     {
         "name": "Personal finance tracking app with React",
-        "thumb": "img/personal-finance.jpg",
-        "hero": "img/personal-finance.jpg",
+        "thumb": "img/habit-tracking-hero.jpg",
+        "hero": "img/habit-tracking-hero.jpg",
         "categories": ["react", "javascript"],
         "slug": "personal-finance",
     },

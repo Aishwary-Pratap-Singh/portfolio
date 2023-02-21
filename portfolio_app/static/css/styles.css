@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
 }
 
 html {
@@ -157,3 +158,4 @@ body {
 .u-bare-link {
   text-decoration: none;
 }
+
