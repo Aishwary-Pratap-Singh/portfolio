@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
@@ -26,6 +26,9 @@ projects = [
         "slug": "api-docs",
     },
 ]
+
+slug_to_project = {project["slug"]: project for project in projects}
+
 @app.route("/")
 def home():
     return render_template("home.html", projects = projects)
@@ -38,5 +41,8 @@ def about():
 def contact():
     return render_template("contact.html")
 
-if __name__ == "__main__":
-    app.run()
+@app.route("/project/<string:slug>")
+def project(slug):
+    if slug not in slug_to_project:
+        abort(404)
+    return render_template(f"project_{slug}.html", project=slug_to_project[slug])
